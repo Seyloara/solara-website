@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solara Fanmade</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(45deg, #4b0082, #000);
+            background-size: 200% 200%;
+            animation: gradientAnimation 10s ease infinite;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            overflow: hidden;
+        }
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 0%;
+            }
+            50% {
+                background-position: 100% 100%;
+            }
+            100% {
+                background-position: 0% 0%;
+            }
+        }
+        .solara-container {
+            font-size: 72px;
+            font-weight: bold;
+            color: #8a2be2;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(138, 43, 226, 0.8);
+        }
+        .text-container {
+            font-size: 24px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .highlight {
+            font-size: 48px;
+            color: #8a2be2;
+            font-weight: bold;
+        }
+        .image-container {
+            position: relative;
+            width: 500px;
+            height: 300px;
+            perspective: 1000px;
+            margin-bottom: 20px;
+        }
+        .image {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.3s, box-shadow 0.3s;
+            transform-style: preserve-3d;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(128, 0, 128, 0.6);
+        }
+        .image-container:hover .image {
+            transform: rotateX(15deg) rotateY(15deg);
+            box-shadow: 
+                0 0 20px rgba(128, 0, 128, 0.7),
+                0 0 40px rgba(128, 0, 128, 0.8),
+                0 0 80px rgba(128, 0, 128, 0.5);
+        }
+        .image-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(128, 0, 128, 0.6) 0%, rgba(128, 0, 128, 0) 70%);
+            opacity: 0;
+            transition: opacity 0.3s;
+            border-radius: 10px;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .image-container:hover::before {
+            opacity: 1;
+        }
+        .image-container img {
+            position: relative;
+            z-index: 0;
+        }
+        .button-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .button-container a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 15px;
+            color: #8a2be2;
+            background: #000;
+            border: 2px solid #8a2be2;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            transition: box-shadow 0.3s ease;
+            position: relative;
+            margin: 0 5px;
+            width: 45px; /* Adjust the width to make it square */
+            height: 45px; /* Adjust the height to make it square */
+        }
+        .button-container a:hover {
+            box-shadow: 0 0 15px rgba(138, 43, 226, 0.8);
+        }
+        .button-container .icon {
+            color: #8a2be2;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="solara-container">
+        SOLARA
+    </div>
+    <div class="text-container" id="textContainer">
+        The first & best external scripting utility after <span class="highlight">byfron</span>
+    </div>
+    <div class="image-container" id="imageContainer">
+        <img src="https://cdn.discordapp.com/attachments/1274739262029561856/1274908101350260826/image.png?ex=66c3f632&is=66c2a4b2&hm=94494c515f9a61c3b48bd15b0814504d91c9d559d5888b9567c930934f36c943&" alt="Sample Image" class="image" id="image">
+    </div>
+    <div class="button-container">
+        <a href="https://getsolara.dev/download" class="download-button" target="_blank">
+            <i class="fas fa-download icon"></i>
+        </a>
+        <a href="https://t.me/thesolara" class="telegram-button" target="_blank">
+            <i class="fab fa-telegram-plane icon"></i>
+        </a>
+        <a href="https://discord.com/invite/BYYpG8qfqv" class="discord-button" target="_blank">
+            <i class="fab fa-discord icon"></i>
+        </a>
+    </div>
+</body>
+</html>
